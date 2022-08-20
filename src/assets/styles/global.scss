@@ -1,0 +1,47 @@
+// Externals
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+KR:wght@700&display=swap');
+
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+
+// Basics
+@import "basics/typography";
+@import "basics/base";
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/modals";
+@import "basics/animations";
+
+// Components
+@import "cmps/contact-list";
+@import "cmps/contact-preview";
+@import "cmps/contact-filter";
+@import "cmps/app-header";
+
+// Pages
+@import "pages/contact_page";
+@import "pages/home-page";
+@import "pages/contact-details";
+@import "pages/contact-edit";
+@import "pages/statistics-page";
+@import "pages/signup";
+.main-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .app-header {
+        
+        background-color: #e91e63;
+    }
+
+    main {
+        flex-grow: 1;
+    }
+
+    > footer {
+        background-color: #111;
+        color: white;
+    }
+}

@@ -1,0 +1,15 @@
+.home-page {
+    color: whitesmoke;
+    .info-wrapper {
+        gap: 70px;
+
+        .user-info {
+            gap: 5px;
+        }
+    }
+    .signup-link {
+        color: lightblue;
+        font-size: 1.2rem;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,75 @@
+.edit-contact {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  .edit-header {
+    a {
+      width: 30px;
+      transition: all 200ms;
+      cursor: pointer;
+    }
+    h1 {
+      float: inline-end;
+    }
+    .back-btn {
+      img {
+        filter: invert(100%) sepia(14%) saturate(1777%) hue-rotate(178deg)
+          brightness(95%) contrast(84%);
+      }
+      &:hover {
+        img {
+          transition: all 0.3s ease;
+          filter: invert(79%) sepia(6%) saturate(137%) hue-rotate(182deg)
+            brightness(91%) contrast(93%);
+        }
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    input {
+      background-color: rgba(255, 255, 255, 0.127);
+      border-radius: 5px;
+      color: whitesmoke;
+      border: none;
+      font-size: 1.8rem;
+      padding: 15px;
+      @media (max-width: 480px) {
+        font-size: 1rem;
+      }
+    }
+    .edit-actions {
+      gap: 20px;
+      margin-block-start: 10px;
+      img {
+        filter: invert(100%) sepia(14%) saturate(1777%) hue-rotate(178deg)
+          brightness(95%) contrast(84%);
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        align-self: flex-start;
+        transition: all 200ms;
+        padding: 0;
+        span {
+          color: whitesmoke;
+          font-family: 'Lato';
+          font-size: 16px;
+        }
+        &:hover {
+          img {
+            transition: all 0.8s ease;
+            filter: invert(79%) sepia(6%) saturate(137%) hue-rotate(182deg)
+              brightness(91%) contrast(93%);
+          }
+        }
+      }
+    }
+  }
+}

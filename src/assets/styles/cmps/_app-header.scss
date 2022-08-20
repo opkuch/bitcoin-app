@@ -1,0 +1,21 @@
+
+.app-header {
+    background-color: rgba(27, 43, 56, 0.913);
+    color: #fff;
+    padding: 10px;
+    box-shadow: 0 -7px 17px 6px inset #f9f8f808, 0 -2px inset #ffffff0a;
+    > * {
+        margin-inline: 35px;
+    }
+  nav {
+    gap: 10px;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    .logo {
+      max-width: 30px;
+    }
+
+  }
+}

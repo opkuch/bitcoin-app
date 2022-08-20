@@ -1,0 +1,39 @@
+.contact-details {
+  color: whitesmoke;
+  gap: 15px;
+
+  .contact-info {
+    gap: 15px;
+    img {
+      max-width: 200px;
+    }
+    h1 {
+      color: rgb(168, 0, 53);
+      font-size: 2rem;
+    }
+  }
+  .details-actions {
+    gap: 20px;
+    margin-block-start: 10px;
+    img {
+      filter: invert(100%) sepia(14%) saturate(1777%) hue-rotate(178deg)
+        brightness(95%) contrast(84%);
+      max-width: 35px;
+    }
+    .back-btn {
+      cursor: pointer;
+      width: 30px;
+      transition: all 200ms;
+      &:hover {
+        img {
+          transition: all 0.8s ease;
+          filter: invert(79%) sepia(6%) saturate(137%) hue-rotate(182deg)
+            brightness(91%) contrast(93%);
+        }
+      }
+    }
+    .edit-link {
+      gap: 2px;
+    }
+  }
+}

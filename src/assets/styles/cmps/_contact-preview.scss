@@ -1,0 +1,67 @@
+.contact-preview {
+  color: whitesmoke;
+  min-height: 70px;
+  display: flex;
+  min-width: 407px;
+  @media (max-width: 407px) {
+    min-width: 100%;
+  }
+  img {
+    max-width: 30px;
+  }
+  h2 {
+    
+    font-size: 1rem;
+  }
+// max-width: 200px;
+  background-color: rgba(242, 243, 244, 0.15);
+  border-radius: 1px;
+  overflow-y: hidden;
+  outline: 1px solid rgba(255, 255, 255, 0.051);
+  box-shadow: inset 0 -1.5px rgba(0, 0, 0, 0.187);
+  .contact-info {
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    // background-color: #6c83a49c;
+    background-color: rgba(0, 0, 0, 0.408);
+    transform: translateY(200%);
+    transition: transform 0.3s;
+    border-radius: 1px;
+    border-left: 1px solid rgba(255, 255, 255, 0.124);
+    > button,
+    a {
+      font-size: 1rem;
+      padding: 0;
+      background: none;
+      border: none;
+      color: whitesmoke;
+      &:hover {
+        text-decoration: underline;
+      }
+      .action-img {
+        max-width: 25px;
+        max-height: 25px;
+      }
+    }
+  }
+
+  &:hover .actions {
+    transform: translateY(0);
+  }
+  .info-preview {
+    span {
+      font-size: 0.8rem;
+      margin-block-start: 3px;
+      color: rgb(200, 200, 200);
+    }
+  }
+}

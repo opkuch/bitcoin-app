@@ -1,0 +1,13 @@
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .add-contact {
+        min-height: 50px;
+        .add-img {
+            max-width: 20px;
+            opacity: 0.4;
+            margin-inline-end: 8px;
+        }
+    }
+}

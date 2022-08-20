@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react'
+import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import './assets/styles/global.scss'
+import { HomePage } from './pages/HomePage'
+import { Signup } from './pages/Signup'
+import { ContactPage } from './pages/ContactPage'
+import { bitcoinService } from './services/bitcoinService'
+import { ContactDetails } from './pages/ContactDetailsPage'
+import { AppHeader } from './components/AppHeader'
+import { ContactEdit } from './pages/ContactEditPage'
+import {StatisticsPage} from './pages/StatisticsPage'
+import { Background } from './components/Background'
+export default class App extends Component {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  async coinsToBitcoin() {
+    const { user } = this.state
+    if (!user) return
+    try {
+      const btc = await bitcoinService.getRate(user.coins)
+      this.setState({ btc })
+    } catch (err) {
+      console.log('problems with getting bitcoin rate', err)
+    }
+  }
+  render() {
+    return (
+      <Router>
+        <AppHeader />
+        <div className="bitcoin-app">
+          <Switch>
+            <Route path="/contacts/edit/:id?" component={ContactEdit} />
+            <Route path="/contacts/:id" component={ContactDetails} />
+            <Route path="/signup" component={Signup}/>
+
+            <Route path="/contacts">
+              <ContactPage />
+            </Route>
+            <Route path="/statistics" component={StatisticsPage}/>
+            <Route path="/">
+              <HomePage />
+            </Route>
+          </Switch>
+        </div>
+        <Background />
+      </Router>
+    )
+  }
 }
-
-export default App;

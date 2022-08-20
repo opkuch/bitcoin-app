@@ -1,0 +1,24 @@
+.signup-page {
+  color: whitesmoke;
+  form {
+    gap: 10px;
+    label {
+      span {
+        font-size: 1.3rem;
+      }
+      gap: 10px;
+    }
+  }
+  input {
+    background-color: rgba(255, 255, 255, 0.127);
+    border-radius: 5px;
+    color: whitesmoke;
+    border: none;
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .signup-btn {
+    padding: 0.5rem;
+  }
+}
