@@ -1,10 +1,10 @@
 import { Component } from 'react'
-import { ContactDetails } from '../pages/ContactDetailsPage.jsx'
 import { ContactFilter } from '../components/ContactFilter.jsx'
 import { ContactList } from '../components/ContactList.jsx'
 import { contactService } from '../services/contactService.js'
-import { Link } from 'react-router-dom'
-export class ContactPage extends Component {
+import { connect } from 'react-redux'
+
+class _ContactPage extends Component {
   state = {
     contacts: null,
     selectedContactId: null,
@@ -12,6 +12,10 @@ export class ContactPage extends Component {
   }
 
   componentDidMount() {
+    if (this.props.loggedInUser.name === 'Guest') {
+      this.props.history.push('/signup')
+      return
+    }
     this.loadContacts()
   }
   async loadContacts() {
@@ -44,3 +48,13 @@ export class ContactPage extends Component {
     )
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    loggedInUser: state.userModule.loggedInUser,
+  }
+}
+
+const mapDispatchToProps = {
+}
+
+export const ContactPage = connect(mapStateToProps, mapDispatchToProps)(_ContactPage)

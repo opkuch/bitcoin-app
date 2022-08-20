@@ -1,13 +1,19 @@
 import { Component } from 'react'
 import { bitcoinService } from '../services/bitcoinService'
 import { Chart } from '../components/Chart'
-export class StatisticsPage extends Component {
+import { connect } from 'react-redux'
+
+ class _StatisticsPage extends Component {
   state = {
     marketPrice: null,
     transactionAmount: null,
     isLoading: true,
   }
   async componentDidMount() {
+    if (this.props.loggedInUser.name === 'Guest') {
+      this.props.history.push('/signup')
+      return
+    }
     const marketPriceData = await bitcoinService.getMarketPrice()
     const transactionsData = await bitcoinService.getConfirmedTransactions()
 
@@ -115,3 +121,13 @@ export class StatisticsPage extends Component {
     )
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    loggedInUser: state.userModule.loggedInUser,
+  }
+}
+
+const mapDispatchToProps = {
+}
+
+export const StatisticsPage = connect(mapStateToProps, mapDispatchToProps)(_StatisticsPage)
