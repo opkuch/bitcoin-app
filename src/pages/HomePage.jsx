@@ -21,9 +21,15 @@ class _HomePage extends Component {
     if (user) {
       const userBtc = await this.onGetRate(user.coins)
       this.setState({ userBtc })
+    } else {
+      this.setState({userBtc: null})
     }
   }
-
+  componentDidUpdate({loggedInUser}, prevState) {
+    if (loggedInUser.name !== this.props.loggedInUser.name) {
+      this.setState({userBtc: null})
+  }
+}
   async onGetRate(coins) {
     return await bitcoinService.getRate(coins)
   }
