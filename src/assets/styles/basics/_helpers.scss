@@ -52,6 +52,15 @@
 
 
 // Buttons
+
+.nice-button {
+    border: none;
+    padding: 15px;
+    color: whitesmoke;
+    font-size: 1rem;
+    background: linear-gradient(to right, rgb(110, 15, 0), rgb(103, 4, 42));
+    border-radius: 0 5px 5px 0;
+}
 .simple-button {
     background: transparent;
     color: black;

@@ -14,7 +14,7 @@ body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to bottom, rgb(7, 18, 33), rgb(15, 40, 63))
+  background: linear-gradient(to bottom, rgb(7, 18, 33), rgb(15, 40, 63));
 }
 
 .app-background {
@@ -54,6 +54,18 @@ a {
   &.active {
     color: rgb(216, 220, 225);
   }
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.127);
+  border-radius: 5px;
+  color: whitesmoke;
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+ &:focus-within {
+  outline: none;
+ }
 }
 
 button {

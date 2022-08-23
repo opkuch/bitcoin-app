@@ -26,7 +26,7 @@ export function TransferFund({ maxCoins, onTransferCoins }) {
           onChange={onHandleChange}
           placeholder="Transfer coins.."
         />
-        <button>Transfer</button>
+        <button className='nice-button'>Transfer</button>
       </label>
     </form>
   )
