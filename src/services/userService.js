@@ -2,7 +2,8 @@ import {storageService} from './storageService.js'
 
 export const userService = {
     getUser,
-    signup
+    signup,
+    saveUser
 }
 
 const USER_KEY = 'bitcoin_user'
@@ -15,6 +16,11 @@ function signup(name) {
     }
     storageService.store(USER_KEY, newUser)
     return newUser
+}
+
+function saveUser(user) {
+    storageService.store(USER_KEY, user)
+    return user
 }
 
 function getUser() {

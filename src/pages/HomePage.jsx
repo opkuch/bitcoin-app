@@ -14,11 +14,14 @@ class _HomePage extends Component {
     const btcRate = await bitcoinService.btcToUsdRate()
     this.setState({ btcRate })
     const user = userService.getUser()
-    if (this.props.loggedInUser.name === 'Guest' && user)
-      this.props.setUser(user, async () => {
-        const userBtc = await this.onGetRate(user.coins)
-        this.setState({ userBtc })    
-      })
+    const { loggedInUser } = this.props
+    if (user && loggedInUser.name === 'Guest') {
+      this.props.setUser(user)
+    }
+    if (user) {
+      const userBtc = await this.onGetRate(user.coins)
+      this.setState({ userBtc })
+    }
   }
 
   async onGetRate(coins) {
@@ -39,11 +42,13 @@ class _HomePage extends Component {
                 ? 'Please sign up first..'
                 : 'USD: ' + loggedInUser.coins + '$'}
             </span>
-            <Link className='signup-link' to="/signup">{loggedInUser.moves? '' : 'Sign-Up Here!'}</Link>
+            <Link className="signup-link" to="/signup">
+              {loggedInUser.moves ? '' : 'Sign-Up Here!'}
+            </Link>
             <span>{userBtc ? 'BTC: ' + userBtc : ''}</span>
           </section>
           <section className="bitcoin-rate flex column">
-            <span className="small-title">Current btc usd</span>
+            <span className="small-title">Current btc rate</span>
             <h1>{btcRate}$</h1>
           </section>
         </div>

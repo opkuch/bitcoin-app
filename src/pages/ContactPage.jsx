@@ -2,7 +2,9 @@ import { Component } from 'react'
 import { ContactFilter } from '../components/ContactFilter.jsx'
 import { ContactList } from '../components/ContactList.jsx'
 import { contactService } from '../services/contactService.js'
+import { userService } from '../services/userService.js'
 import { connect } from 'react-redux'
+import { setUser } from '../store/actions/userActions'
 
 class _ContactPage extends Component {
   state = {
@@ -12,7 +14,13 @@ class _ContactPage extends Component {
   }
 
   componentDidMount() {
-    if (this.props.loggedInUser.name === 'Guest') {
+    const user = userService.getUser()
+    const {loggedInUser} = this.props
+    if (user && loggedInUser.name !== user.name)
+    {
+      this.props.setUser(user)
+    }
+    else if (!user) {
       this.props.history.push('/signup')
       return
     }
@@ -55,6 +63,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
+  setUser
 }
 
 export const ContactPage = connect(mapStateToProps, mapDispatchToProps)(_ContactPage)
