@@ -1,10 +1,12 @@
 .moves-list {
+  gap: 5px;
+  .move-preview {
+    text-align: start;
     gap: 5px;
-    .move-preview {
-        gap: 5px;
-        padding: 1rem;
-        background-color: #5e6c8447;
-        border-radius: 5px;
-        outline: 1px solid #f5f5f556;
-    }
+    padding: 1rem;
+    background-color: #5e6c8447;
+    border-radius: 5px;
+    outline: 1px solid #f5f5f556;
+    box-shadow: inset 0 4px 0px 0px #9bb5d142;
+  }
 }

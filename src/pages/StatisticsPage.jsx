@@ -1,5 +1,7 @@
 import { Component } from 'react'
 import { bitcoinService } from '../services/bitcoinService'
+import { userService } from '../services/userService.js'
+import { setUser } from '../store/actions/userActions'
 import { Chart } from '../components/Chart'
 import { connect } from 'react-redux'
 import moment from 'moment'
@@ -23,10 +25,17 @@ class _StatisticsPage extends Component {
   }
   async componentDidMount() {
     
-    if (this.props.loggedInUser.name === 'Guest') {
-      this.props.history.push('/')
+    const user = userService.getUser()
+    const {loggedInUser} = this.props
+    if (user && loggedInUser.name !== user.name)
+    {
+      this.props.setUser(user)
+    }
+    else if (!user) {
+      this.props.history.push('/signup')
       return
     }
+
     const marketPriceData = await bitcoinService.getMarketPrice()
     const transactionsData = await bitcoinService.getConfirmedTransactions()
 
@@ -71,7 +80,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {
+  setUser
+}
 
 export const StatisticsPage = connect(
   mapStateToProps,
