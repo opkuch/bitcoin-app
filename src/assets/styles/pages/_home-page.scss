@@ -1,18 +1,25 @@
 .home-page {
   color: whitesmoke;
   gap: 45px;
+  .user-name {
+    color: rgb(184, 5, 5);
+    text-transform: capitalize;
+    font-size: 3rem;
+  }
   h1 {
     font-size: 2.5rem;
   }
   .info-wrapper {
+
     flex-wrap: wrap;
     gap: 70px;
     .user-info {
       gap: 5px;
       font-size: 2.5rem;
+
+    
     }
 
-    // @media (max-width)
   }
   .signup-link {
     color: lightblue;

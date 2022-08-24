@@ -10,7 +10,7 @@ export function TransferFund({contact, maxCoins, onTransferCoins }) {
   const inputRef = useRef(null)
   function transferCoins(ev) {
     ev.preventDefault()
-    if (typeof amount !== 'number' || amount > maxCoins) return
+    if (typeof amount !== 'number' || amount > maxCoins || !amount) return
     else {
       onTransferCoins(amount, contact.name)
       inputRef.current.value = ''

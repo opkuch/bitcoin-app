@@ -2,105 +2,44 @@ import { Component } from 'react'
 import { bitcoinService } from '../services/bitcoinService'
 import { Chart } from '../components/Chart'
 import { connect } from 'react-redux'
+import moment from 'moment'
+import {chartData} from '../services/chartService'
 
- class _StatisticsPage extends Component {
+class _StatisticsPage extends Component {
   state = {
     marketPrice: null,
     transactionAmount: null,
     isLoading: true,
   }
+  generateDays = (dayAmount) => {
+    const days = []
+    const dateStart = moment()
+    const dateEnd = moment().add(dayAmount, 'days')
+    while (dateEnd.diff(dateStart, 'days') >= 0) {
+     days.push(dateStart.format('DD/MM'))
+     dateStart.add(1, 'days')
+    }
+    return days
+  }
   async componentDidMount() {
+    
     if (this.props.loggedInUser.name === 'Guest') {
-      this.props.history.push('/signup')
+      this.props.history.push('/')
       return
     }
     const marketPriceData = await bitcoinService.getMarketPrice()
     const transactionsData = await bitcoinService.getConfirmedTransactions()
 
-    const marketPrice = {
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May'],
-        datasets: [
-          {
-            fill: true,
-            label: 'USD',
-            data: marketPriceData.values,
-            borderColor: 'rgb(53, 162, 235)',
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
-          },
-        ],
-      },
-      options: {
-        scales: {
-          x: {
-            ticks: {
-              color: '#fff',
-            },
-          },
-          y: {
-            ticks: {
-              color: '#fff',
-            },
-          },
-        },
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-            labels: {
-              color: '#fff',
-            },
-          },
-          title: {
-            display: true,
-            text: marketPriceData.name,
-            color: '#fff',
-          },
-        },
-      },
-    }
-    const transactionAmount = {
-      data: {
-        labels: ['January', 'February', 'March', 'April'],
-        datasets: [
-          {
-            fill: true,
-            label: 'USD',
-            data: transactionsData.values,
-            borderColor: 'rgb(53, 162, 235)',
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
-          },
-        ],
-      },
-      options: {
-        scales: {
-          x: {
-            ticks: {
-              color: '#fff',
-            },
-          },
-          y: {
-            ticks: {
-              color: '#fff',
-            },
-          },
-        },
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-            labels: {
-              color: '#fff',
-            },
-          },
-          title: {
-            display: true,
-            text: 'Confirmed Transactions Per Month',
-            color: '#fff',
-          },
-        },
-      },
-    }
+    const marketPrice = JSON.parse(JSON.stringify(chartData))
+    marketPrice.data.labels = this.generateDays(151)
+    marketPrice.data.datasets[0].data = marketPriceData.values
+    marketPrice.options.plugins.title.text = 'Market Price (USD)'
+
+    const transactionAmount = JSON.parse(JSON.stringify(chartData))
+    transactionAmount.data.labels = this.generateDays(150)
+    transactionAmount.data.datasets[0].data = transactionsData.values
+    transactionAmount.data.datasets[0].fill = true
+    transactionAmount.options.plugins.title.text = 'Confirmed Transaction Per Day'
     this.setState({ marketPrice, transactionAmount, isLoading: false })
   }
   componentDidUpdate(prevProps, prevState) {
@@ -115,7 +54,6 @@ import { connect } from 'react-redux'
     if (isLoading) return <div>Loading...</div>
     return (
       <div className="statistics-page container">
-        <h1 className='page-headline'>Latest Statistics</h1>
         <section className="charts-wrapper">
           <Chart data={marketPrice.data} options={marketPrice.options} />
           <Chart
@@ -133,7 +71,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = {
-}
+const mapDispatchToProps = {}
 
-export const StatisticsPage = connect(mapStateToProps, mapDispatchToProps)(_StatisticsPage)
+export const StatisticsPage = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_StatisticsPage)

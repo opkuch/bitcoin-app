@@ -7,7 +7,7 @@ import { setUser } from '../store/actions/userActions'
 import {MovesList} from '../components/MovesList'
 import usdImg from '../assets/images/usd.svg'
 import bitcoinImg from '../assets/images/bitcoin-2.svg'
-
+import NumberFormat from 'react-number-format';
 
 class _HomePage extends Component {
   state = {
@@ -42,16 +42,15 @@ class _HomePage extends Component {
     const { loggedInUser } = this.props
     const { userBtc, btcRate } = this.state
     var lastMoves = []
-    console.log(loggedInUser, 'loggedinUser')
     for (var i = loggedInUser.moves.length - 1; i >= 0; i--) {
       lastMoves.push(loggedInUser.moves[i])
       if (lastMoves.length === 3) break
     }
     return (
       <div className="container home-page flex column align-center">
-        <h1>Hi, {loggedInUser.name}</h1>
-        <div className="info-wrapper flex">
-          <section className="user-info flex column">
+        <h1>Hi, <span className='user-name'>{loggedInUser.name}</span></h1>
+        <div className="info-wrapper flex ">
+          <section className="user-info flex column align-center">
             <span className="home-title small-title flex column align-center">
             <img className='svg-medium' src={usdImg}/>
               Current balance 
@@ -71,7 +70,7 @@ class _HomePage extends Component {
             <img className='svg-medium' src={bitcoinImg}/>
               Current btc rate
               </span>
-            <h1>{btcRate}$</h1>
+            <h1><NumberFormat value={btcRate} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h1>
           </section>
           <MovesList lastMoves={lastMoves}/>
         </div>

@@ -51,7 +51,7 @@ async function _prepData(type) {
   var monthlySum = 0
   values.map((value, idx) => {
     monthlySum += value.y
-    if (idx && idx % 30 === 0) bitcoinValues.push(monthlySum)
+    bitcoinValues.push(monthlySum)
   })
   const resDetails = {
     name,
