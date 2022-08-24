@@ -26,6 +26,13 @@ class _ContactPage extends Component {
     }
     this.loadContacts()
   }
+  
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.loggedInUser.name !== this.props.loggedInUser.name) {
+      this.props.history.push('/')
+    }
+  }
+
   async loadContacts() {
     try {
       const contacts = await contactService.getContacts(this.state.filterBy)

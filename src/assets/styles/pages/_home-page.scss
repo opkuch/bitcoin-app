@@ -1,15 +1,25 @@
 .home-page {
-    color: whitesmoke;
-    .info-wrapper {
-        gap: 70px;
+  color: whitesmoke;
+  gap: 45px;
+  h1 {
+    font-size: 2.5rem;
+  }
+  .info-wrapper {
+    flex-wrap: wrap;
+    gap: 70px;
+    .user-info {
+      gap: 5px;
+      font-size: 2.5rem;
+    }
 
-        .user-info {
-            gap: 5px;
-        }
-    }
-    .signup-link {
-        color: lightblue;
-        font-size: 1.2rem;
-        text-decoration: underline;
-    }
+    // @media (max-width)
+  }
+  .signup-link {
+    color: lightblue;
+    font-size: 1.2rem;
+    text-decoration: underline;
+  }
+  .home-title {
+    gap: 10px;
+  }
 }

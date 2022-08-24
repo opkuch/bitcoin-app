@@ -157,8 +157,20 @@
     font-size: 0.8571428571rem;
     font-weight: 600;
     letter-spacing: 0.04em;
-    font-size: 12px;
+    font-size: 0.8rem;
     margin-top: 5px;
     text-transform: uppercase;
     padding-block: 1rem;
+
+    &.smaller {
+        font-size: 0.7rem;
+    }
+  }
+
+  .svg-small {
+    max-width: 40px;
+  }
+
+  .svg-medium {
+    max-width: 60px;
   }

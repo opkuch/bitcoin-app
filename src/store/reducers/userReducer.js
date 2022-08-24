@@ -2,7 +2,7 @@ const INITIAL_STATE = {
     loggedInUser: {
         name: 'Guest',
         coins: 0,
-        moves: null
+        moves: []
     }
 }
 

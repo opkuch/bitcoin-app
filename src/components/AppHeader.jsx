@@ -13,7 +13,7 @@ function _AppHeader(props) {
     props.setUser({
       name: 'Guest',
       coins: 0,
-      moves: null
+      moves: []
   })
     isSignout = 'none'
   }
@@ -39,7 +39,7 @@ function _AppHeader(props) {
           <NavLink exact to="/statistics">
             Statistics
           </NavLink>
-          <a onClick={onSignout} style={{display: isSignout}}>Sign out</a>
+          <a className='signout' onClick={onSignout} style={{display: isSignout}}>Sign out</a>
         </nav>
       </div>
     </header>

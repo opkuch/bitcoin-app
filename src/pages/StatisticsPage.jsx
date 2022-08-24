@@ -103,6 +103,12 @@ import { connect } from 'react-redux'
     }
     this.setState({ marketPrice, transactionAmount, isLoading: false })
   }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.loggedInUser.name !== this.props.loggedInUser.name) {
+      this.props.history.push('/')
+    }
+  }
+
   render() {
     const { marketPrice, transactionAmount, isLoading } = this.state
     console.log(transactionAmount)

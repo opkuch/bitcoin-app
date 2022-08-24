@@ -6,13 +6,13 @@ function onHandleChange({ target }) {
   const { value } = target
   amount = +value
 }
-export function TransferFund({ maxCoins, onTransferCoins }) {
+export function TransferFund({contact, maxCoins, onTransferCoins }) {
   const inputRef = useRef(null)
   function transferCoins(ev) {
     ev.preventDefault()
     if (typeof amount !== 'number' || amount > maxCoins) return
     else {
-      onTransferCoins(amount)
+      onTransferCoins(amount, contact.name)
       inputRef.current.value = ''
     }
   }

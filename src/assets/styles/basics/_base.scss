@@ -4,7 +4,6 @@
 
 html {
   font-family: OpenSans, sans-serif;
-  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -25,7 +24,7 @@ body {
   background-repeat: repeat;
   position: fixed;
   top: 0;
-  opacity: 0.15;
+  opacity: 0.1;
   pointer-events: none;
 }
 img {

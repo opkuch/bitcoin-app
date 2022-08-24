@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { contactService } from '../services/contactService'
 import { userService } from '../services/userService'
+import { utilService } from '../services/utilService'
 import unknownContact from '../assets/images/unknown-contact.svg'
 import backImg from '../assets/images/back.svg'
 import editImg from "../assets/images/edit.svg"
@@ -41,8 +42,14 @@ class _ContactDetails extends Component {
     this.props.history.push('/contacts')
   }
 
-  onTransferCoins = (amount) => {
+  onTransferCoins = (amount, contactName) => {
     const {name,coins, moves} = this.props.loggedInUser
+    moves.push({
+      id: utilService.makeId(),
+      to: contactName,
+      amount,
+      transferTime: Date.now()
+    })
     const userAfterTransfer = {
       name,
       coins: coins - amount,
