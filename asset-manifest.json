@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/bitcoin-app/static/css/main.a387c99a.css",
-    "main.js": "/bitcoin-app/static/js/main.bd0217b2.js",
+    "main.css": "/bitcoin-app/static/css/main.bf0a49cd.css",
+    "main.js": "/bitcoin-app/static/js/main.c11e0fa2.js",
     "static/media/background.png": "/bitcoin-app/static/media/background.9902cf5f4e78d36c2c98.png",
     "static/media/unknown-contact.svg": "/bitcoin-app/static/media/unknown-contact.fa1d343611a14ca28c2a352ec12c7881.svg",
     "static/media/logo.svg": "/bitcoin-app/static/media/logo.fecc4ba5feaa5401b7693a81c7194b70.svg",
+    "static/media/bitcoin-2.svg": "/bitcoin-app/static/media/bitcoin-2.634420c75f0ef9a9a6de5dd074db1820.svg",
+    "static/media/usd.svg": "/bitcoin-app/static/media/usd.20202d1e7aaf88733f14999ee874ec47.svg",
     "static/media/remove.svg": "/bitcoin-app/static/media/remove.f1fbda8cde673067dad0916689b0aff5.svg",
+    "static/media/transaction.svg": "/bitcoin-app/static/media/transaction.14840d434cc20e97f9a0b222ec37815f.svg",
     "static/media/edit.svg": "/bitcoin-app/static/media/edit.997bed1662ea492f2876f7bd78c83f89.svg",
     "static/media/back.svg": "/bitcoin-app/static/media/back.c1f8d604eccfc8a2257d38cb67047882.svg",
     "static/media/red-x.svg": "/bitcoin-app/static/media/red-x.def57176cf19c0a96b96cea5c028d90f.svg",
     "static/media/add.svg": "/bitcoin-app/static/media/add.05b702a7cbc5492b490a019ee21d851a.svg",
     "index.html": "/bitcoin-app/index.html",
     "static/media/confirm.svg": "/bitcoin-app/static/media/confirm.02ef5b54b78b5fe7294b6f30773d3089.svg",
-    "main.a387c99a.css.map": "/bitcoin-app/static/css/main.a387c99a.css.map",
-    "main.bd0217b2.js.map": "/bitcoin-app/static/js/main.bd0217b2.js.map"
+    "main.bf0a49cd.css.map": "/bitcoin-app/static/css/main.bf0a49cd.css.map",
+    "main.c11e0fa2.js.map": "/bitcoin-app/static/js/main.c11e0fa2.js.map"
   },
   "entrypoints": [
-    "static/css/main.a387c99a.css",
-    "static/js/main.bd0217b2.js"
+    "static/css/main.bf0a49cd.css",
+    "static/js/main.c11e0fa2.js"
   ]
 }
