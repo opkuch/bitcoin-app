@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.css": "/bitcoin-app/static/css/main.455b1b01.css",
-    "main.js": "/bitcoin-app/static/js/main.f4e93c36.js",
+    "main.css": "/bitcoin-app/static/css/main.b0e02c91.css",
+    "main.js": "/bitcoin-app/static/js/main.2fdd3c3d.js",
     "static/media/cool-background.png": "/bitcoin-app/static/media/cool-background.83637f3217d63ff47054.png",
     "static/media/background.png": "/bitcoin-app/static/media/background.9902cf5f4e78d36c2c98.png",
     "static/media/unknown-contact.svg": "/bitcoin-app/static/media/unknown-contact.fa1d343611a14ca28c2a352ec12c7881.svg",
     "static/media/logo.svg": "/bitcoin-app/static/media/logo.fecc4ba5feaa5401b7693a81c7194b70.svg",
     "static/media/bitcoin-2.svg": "/bitcoin-app/static/media/bitcoin-2.634420c75f0ef9a9a6de5dd074db1820.svg",
     "static/media/usd.svg": "/bitcoin-app/static/media/usd.20202d1e7aaf88733f14999ee874ec47.svg",
+    "static/media/github.svg": "/bitcoin-app/static/media/github.bfd0285e551e5dce523b43ef32aaed1d.svg",
     "static/media/remove.svg": "/bitcoin-app/static/media/remove.f1fbda8cde673067dad0916689b0aff5.svg",
     "static/media/transaction.svg": "/bitcoin-app/static/media/transaction.14840d434cc20e97f9a0b222ec37815f.svg",
     "static/media/edit.svg": "/bitcoin-app/static/media/edit.997bed1662ea492f2876f7bd78c83f89.svg",
+    "static/media/linkedin.svg": "/bitcoin-app/static/media/linkedin.14f38c07d38be5bddee02d700bf0fc2d.svg",
     "static/media/back.svg": "/bitcoin-app/static/media/back.c1f8d604eccfc8a2257d38cb67047882.svg",
     "static/media/red-x.svg": "/bitcoin-app/static/media/red-x.def57176cf19c0a96b96cea5c028d90f.svg",
     "static/media/add.svg": "/bitcoin-app/static/media/add.05b702a7cbc5492b490a019ee21d851a.svg",
     "index.html": "/bitcoin-app/index.html",
     "static/media/confirm.svg": "/bitcoin-app/static/media/confirm.02ef5b54b78b5fe7294b6f30773d3089.svg",
-    "main.455b1b01.css.map": "/bitcoin-app/static/css/main.455b1b01.css.map",
-    "main.f4e93c36.js.map": "/bitcoin-app/static/js/main.f4e93c36.js.map"
+    "main.b0e02c91.css.map": "/bitcoin-app/static/css/main.b0e02c91.css.map",
+    "main.2fdd3c3d.js.map": "/bitcoin-app/static/js/main.2fdd3c3d.js.map"
   },
   "entrypoints": [
-    "static/css/main.455b1b01.css",
-    "static/js/main.f4e93c36.js"
+    "static/css/main.b0e02c91.css",
+    "static/js/main.2fdd3c3d.js"
   ]
 }
