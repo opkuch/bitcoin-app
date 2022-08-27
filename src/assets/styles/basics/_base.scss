@@ -3,24 +3,21 @@
 }
 
 html {
-  font-family: OpenSans, sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  // min-height: 100vh;
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // background: linear-gradient(to bottom, rgb(7, 18, 33), rgb(15, 40, 63));
+  background: linear-gradient(to bottom, rgb(7, 18, 33), rgb(15, 40, 63));
 }
 
 .app-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, rgb(7, 18, 33), rgb(15, 40, 63));
 
 }
 .bitcoin-app {

@@ -1,8 +1,9 @@
 .app-header {
-  background-color: rgb(20, 34, 47);
+  background-color: rgba(214, 214, 214, 0.057);
   color: #fff;
   padding: 10px;
-  box-shadow: 0 -7px 17px 6px inset #f9f8f808, 0 -2px inset #ffffff0a;
+  // box-shadow: 0 -7px 17px 6px inset #f9f8f808, 0 -2px inset #ffffff0a;
+  font-family: 'Lato';
   > * {
     margin-inline: 35px;
   }
