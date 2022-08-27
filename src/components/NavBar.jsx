@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom'
 export function NavBar() {
   return (
     <nav className="flex">
-    <NavLink exact to="/">
+    <NavLink className="nav-link" exact to="/">
       Home
     </NavLink>
-    <NavLink exact to="/contacts">
+    <NavLink className="nav-link" exact to="/contacts">
       Contacts
     </NavLink>
-    <NavLink exact to="/statistics">
+    <NavLink className="nav-link" exact to="/statistics">
       Statistics
     </NavLink>
   </nav>
