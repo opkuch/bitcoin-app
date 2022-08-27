@@ -1,5 +1,5 @@
 .app-header {
-  background-color: rgba(22, 36, 48, 0.913);
+  background-color: rgb(20, 34, 47);
   color: #fff;
   padding: 10px;
   box-shadow: 0 -7px 17px 6px inset #f9f8f808, 0 -2px inset #ffffff0a;
@@ -12,10 +12,11 @@
       gap: 10px;
       .nav-link{
         padding-block: 0.5rem;
-        transition: ease-in .3s all;
+        transition: .3s all;
         position: relative;
         &.active {
-          box-shadow: inset 0 -1.5px #fff;
+          box-shadow: inset 0 -1.5px #f57f1e;
+          color: #f57f1e;
         }
         &::after {
           content: "";
@@ -26,7 +27,7 @@
           background: none repeat scroll 0 0 transparent;
           height: 1.5px;
           width: 0;
-          background: #fff;
+          background: #f57f1e;
           transition: width 0.3s ease 0s, left 0.3s ease 0s;
         }
         &:hover::after {
@@ -38,7 +39,7 @@
   }
 
   .signout {
-    color: rgb(97, 152, 255);
+    color: rgb(120, 167, 253);
   }
 
   .logo-wrapper {
