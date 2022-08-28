@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bitcoin-app/static/css/main.2262092a.css",
+    "main.css": "/bitcoin-app/static/css/main.d71ce255.css",
     "main.js": "/bitcoin-app/static/js/main.2fdd3c3d.js",
     "static/media/cool-background.png": "/bitcoin-app/static/media/cool-background.83637f3217d63ff47054.png",
     "static/media/background.png": "/bitcoin-app/static/media/background.9902cf5f4e78d36c2c98.png",
@@ -18,11 +18,11 @@
     "static/media/add.svg": "/bitcoin-app/static/media/add.05b702a7cbc5492b490a019ee21d851a.svg",
     "index.html": "/bitcoin-app/index.html",
     "static/media/confirm.svg": "/bitcoin-app/static/media/confirm.02ef5b54b78b5fe7294b6f30773d3089.svg",
-    "main.2262092a.css.map": "/bitcoin-app/static/css/main.2262092a.css.map",
+    "main.d71ce255.css.map": "/bitcoin-app/static/css/main.d71ce255.css.map",
     "main.2fdd3c3d.js.map": "/bitcoin-app/static/js/main.2fdd3c3d.js.map"
   },
   "entrypoints": [
-    "static/css/main.2262092a.css",
+    "static/css/main.d71ce255.css",
     "static/js/main.2fdd3c3d.js"
   ]
 }
