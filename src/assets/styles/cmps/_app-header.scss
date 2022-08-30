@@ -8,6 +8,7 @@
     margin-inline: 35px;
   }
   .navbar-wrapper {
+    font-size: 1.2rem;
     gap: 10px;
     .close-nav-btn {
       background-color: transparent;
@@ -27,29 +28,38 @@
     }
     nav {
       gap: 10px;
+      align-items: center;
       .nav-link{
-        padding-block: 0.5rem;
         transition: .3s all;
         position: relative;
+        padding-block-end: 3px;
+        // margin-block: 0.5rem;
+
+        @media (max-width: 530px) {
+          padding-block-end: 0;
+          margin-block: 1rem;
+
+        }
         &.active {
-          box-shadow: inset 0 -1.5px #f57f1e;
+          box-shadow: 0 1.5px #f57f1e;
           color: #f57f1e;
         }
-        &::after {
+        &:not(.active)::after {
           content: "";
           position: absolute;
-          bottom: 0;
-          left: 50%;
+          bottom: -3px;
+          right: 50%;
           display: block;
-          background: none repeat scroll 0 0 transparent;
-          height: 1.5px;
+          min-height: 1.5px;
           width: 0;
           background: #f57f1e;
           transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          opacity: 0;
         }
         &:hover::after {
           width: 100%; 
-          left: 0;        
+          left: 0;  
+          opacity: 1;      
         }
 
       }
@@ -83,11 +93,15 @@
 
   .signout {
     color: rgb(120, 167, 253);
-    padding-block: 8px;
+    padding-block-end: 3px;
+    @media (max-width: 530px) {
+      padding-block-start: 1rem;
+    }
   }
 
   .logo-wrapper {
     display: flex;
+    padding-block: 0.25rem;
     .logo {
       max-width: 30px;
     }
