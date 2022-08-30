@@ -1,0 +1,16 @@
+.burger-menu {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: 8px;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+    transform: translateX(400%);
+    opacity: 0;
+    @media (max-width: 530px) {
+        transform: translateX(20%);
+        opacity: 1;
+    }
+    
+}

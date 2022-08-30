@@ -1,5 +1,5 @@
 .app-header {
-  background-color: rgba(109, 192, 255, 0.087);
+    background-color: rgb(18, 30, 46);
   color: #fff;
   padding: 10px;
   // box-shadow: 0 -7px 17px 6px inset #f9f8f808, 0 -2px inset #ffffff0a;
@@ -9,6 +9,22 @@
   }
   .navbar-wrapper {
     gap: 10px;
+    .close-nav-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transform: translateX(400%);
+      filter: invert(40%) sepia(28%) saturate(795%) hue-rotate(180deg) brightness(91%) contrast(82%);
+      img {
+        max-width: 20px;
+      }
+      position: absolute;
+      right: 0;
+      top: 5px;
+      @media (max-width: 530px) {
+        transform: translateX(0);
+      }
+    }
     nav {
       gap: 10px;
       .nav-link{
@@ -35,12 +51,39 @@
           width: 100%; 
           left: 0;        
         }
+
+      }
+      @media(max-width: 530px) {
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: baseline;
+        gap: 18px;
+        margin-block-start: 2rem;
+
+      }
+    }
+    @media(max-width: 530px) {
+      position: fixed;
+      right: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      height: 100%;
+      transform: translateX(400%);
+      transition: transform .6s, box-shadow .6s;
+      z-index: 2;
+      flex-direction: column;
+      align-items: baseline;
+      padding-inline: 1rem;
+      gap: 18px;
+      &.active {
+        transform: translateX(35%);
       }
     }
   }
 
   .signout {
     color: rgb(120, 167, 253);
+    padding-block: 8px;
   }
 
   .logo-wrapper {
